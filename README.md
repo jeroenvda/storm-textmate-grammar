@@ -10,7 +10,7 @@ On MacOS, take the directory and copy it to `<userprofile>/.vscode/extensions`. 
 	.
 	├── argv.json
 	└── extensions
-	    └── storm
+	    └── storm-textmate-grammar
 	        ├── LICENSE
 	        ├── README.md
 	        ├── language-configuration.json
