@@ -1,0 +1,25 @@
+{
+  "name": "storm",
+  "displayName": "storm",
+  "description": "Syntax highlighting for the Synapse storm language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "synapsestorm",
+      "aliases": ["Synapse storm", "synapsestorm", "storm"],
+      "extensions": [".storm"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "synapsestorm",
+      "scopeName": "source.storm",
+      "path": "./syntaxes/synapsestorm.tmLanguage.json"
+    }]
+  }
+}

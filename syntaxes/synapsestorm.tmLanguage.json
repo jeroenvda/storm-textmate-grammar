@@ -1,0 +1,258 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Synapse storm",
+	"patterns": [
+		{	
+			"include": "#block-comments"
+		},
+		{
+			"include": "#line-comments"
+		},
+		{
+			"include": "#statement-keyword"
+		},
+		{
+			"include": "#double-quoted-strings"
+		},
+		{
+			"include": "#single-quoted-strings"
+		},
+		{
+			"include": "#literal"
+		},
+		{	
+			"include": "#variables"
+		},
+		{
+			"include": "#number"
+		},
+		{
+			"include": "#operator"
+		},
+		{
+			"include": "#tags"
+		},
+		{
+			"include": "#properties"
+		}
+	],
+	"repository": {
+		"block-comments": {
+			"name": "comment.block.synapsestorm",
+			"begin": "/\\*",
+			"end": "\\*/",
+			"patterns": [
+				{
+					"name": "comment",
+					"match": "\\\\."
+				}
+			]
+		},
+		"line-comments": {
+			"name": "comment.block.synapsestorm",
+			"begin": "//",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "comment",
+					"match": "\\\\."
+				}
+			]
+		},
+		"statement-keyword": {
+			"patterns": [
+				{
+					"name": "entity.name.function.synapsestorm",
+					"match": "\\bfunction\\b"
+				},
+				{
+					"name": "keyword.control.flow.synapsestorm",
+					"match": "\\b(yield|in|return|init|fini|emit|stop|not|or|and|divert|uniq|once|tee|spin|delnode|background|iden|sleep|count)\\b"
+				},
+				{
+					"name": "keyword.control.flow.conditional",
+					"match": "\\b(switch|elsif|else|if)\\b"
+				},
+				{
+					"name": "keyword.control.trycatch.synapsestorm",
+					"match": "\\b(try|catch)\\b"
+				},
+				{
+					"name": "keyword.control.loop.synapsestorm",
+					"match": "\\b(for|while|break|continue)\\b"
+				}
+			]
+		},
+		"double-quoted-strings": {
+			"name": "string.quoted.synapsestorm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.synapsestorm",
+					"match": "\\\\."
+				},
+				{
+					"include": "#string-consume-escape"
+				}
+			]
+		},
+		"single-quoted-strings": {
+			"name": "string.quoted.synapsestorm",
+			"begin": "\\'",
+			"end": "\\'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.synapsestorm",
+					"match": "\\\\."
+				},
+				{
+					"include": "#string-consume-escape"
+				}
+			]
+		},
+		"string-consume-escape": {
+			"match": "\\\\['\"\\n\\\\]"
+		},
+		"literal": {
+			"patterns": [
+				{
+					"name": "constant.language.boolean.true.synapsestorm",
+					"match": "\\bTrue\\b"
+				},
+				{
+					"name": "constant.language.boolean.false.synapsestorm",
+					"match": "\\bFalse\\b"
+				},
+				{
+					"name": "constant.language.boolean.false.synapsestorm",
+					"match": "\\bNone\\b"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name": "variable",
+					"match": ".*\\$[\\w\\d\\.]+"
+				}
+			]
+		},
+		"number": {
+			"name": "constant.numeric.synapsestorm",
+			"patterns": [
+				{
+					"include": "#number-float"
+				},
+				{
+					"include": "#number-dec"
+				},
+				{
+					"include": "#number-hex"
+				},
+				{
+					"include": "#number-oct"
+				},
+				{
+					"include": "#number-bin"
+				},
+				{
+					"include": "#number-long"
+				},
+				{
+					"name": "invalid.illegal.name.synapsestorm",
+					"match": "\\b[0-9]+\\w+"
+				}
+			]
+		},
+		"number-float": {
+			"name": "constant.numeric.float.synapsestorm",
+			"match": "(?x)\n  (?<! \\w)(?:\n    [0-9]*\\.[0-9]+ ([eE][+-]?[0-9]+)?\n    | [0-9]+\\. ([eE][+-]?[0-9]+)?\n    | [0-9]+ ([eE][+-]?[0-9]+)\n  )([jJ])?\\b\n",
+			"captures": {
+				"4": {
+					"name": "storage.type.imaginary.number.synapsestorm"
+				}
+			}
+		},
+		"number-dec": {
+			"name": "constant.numeric.dec.synapsestorm",
+			"match": "(?x)\n  (?<![\\w\\.])(?:\n      [1-9][0-9]*\n      |\n      0+\n      |\n      [0-9]+ ([jJ])\n      |\n      0 ([0-9]+)(?![eE\\.])\n  )\\b\n",
+			"captures": {
+				"1": {
+					"name": "storage.type.imaginary.number.synapsestorm"
+				},
+				"2": {
+					"name": "invalid.illegal.dec.synapsestorm"
+				},
+				"3": {
+					"name": "invalid.illegal.dec.synapsestorm"
+				}
+			}
+		},
+		"number-hex": {
+			"name": "constant.numeric.hex.synapsestorm",
+			"match": "(?x)\n  (?<![\\w\\.])\n    (0[xX]) [0-9a-fA-F]+\n  \\b\n",
+			"captures": {
+				"1": {
+					"name": "storage.type.number.synapsestorm"
+				}
+			}
+		},
+		"number-oct": {
+			"name": "constant.numeric.oct.synapsestorm",
+			"match": "(?x)\n  (?<![\\w\\.])\n    (0[oO]) [0-7]+\n  \\b\n",
+			"captures": {
+				"1": {
+					"name": "storage.type.number.synapsestorm"
+				}
+			}
+		},
+		"number-bin": {
+			"name": "constant.numeric.bin.synapsestorm",
+			"match": "(?x)\n  (?<![\\w\\.])\n    (0[bB]) [01]+\n  \\b\n",
+			"captures": {
+				"1": {
+					"name": "storage.type.number.synapsestorm"
+				}
+			}
+		},
+		"number-long": {
+			"name": "constant.numeric.bin.synapsestorm",
+			"match": "(?x)\n  (?<![\\w\\.])\n    ([1-9][0-9]* | 0) ([lL])\n  \\b\n",
+			"captures": {
+				"2": {
+					"name": "storage.type.number.synapsestorm"
+				}
+			}
+		},
+		"operator": {
+			"patterns": [
+				{
+					"name": "invalid",
+					"match": "[\\-\\+><|\\\/=%\\*]|@=|\\*in=|~=|\\?=|\\!=|\\^="
+				}
+			]
+		},
+		"tags": {
+			"patterns": [
+				{
+					"name":"entity.name.tag",
+					"match": "#\\w+(\\.\\w+)*"
+				}
+			]
+		},
+		"properties": {
+			"patterns": [
+				{
+					"name":"variable.object.property",
+					"match": "\\w+(\\:\\.?\\w+)+"
+				},
+				{
+					"name":"variable.object.property",
+					"match": "(\\:\\.?\\w+)+"
+				}		
+			]
+		}
+	},
+	"scopeName": "source.storm"
+}
