@@ -27,11 +27,11 @@ On MacOS, take the directory and copy it to `<userprofile>/.vscode/extensions`. 
 
 ## Release Notes
 
-### 1.0.0
+### 0.0.1
 
-Initial release of synapse storm grammar
+Initial release of synapse storm grammar.
 
 ## References
-https://www.apeth.com/nonblog/stories/textmatebundle.html
-https://github.com/microsoft/vscode-textmate/tree/main/test-cases/themes/syntaxes
-https://github.com/rakuy0/vim-storm
+- https://www.apeth.com/nonblog/stories/textmatebundle.html
+- https://github.com/microsoft/vscode-textmate/tree/main/test-cases/themes/syntaxes
+- https://github.com/rakuy0/vim-storm
