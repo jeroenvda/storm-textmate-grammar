@@ -1,4 +1,4 @@
-# TextMate Grammar for storm (Vertex Synapse) README
+# TextMate Grammar for storm (Vertex Synapse)
 TextMate Grammar that allows storm syntax highlighting in for example Visual Studio Code.
 
 ## Features
