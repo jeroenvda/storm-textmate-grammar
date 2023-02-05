@@ -1,10 +1,11 @@
 # TextMate Grammar for storm (Vertex Synapse)
-TextMate Grammar that allows storm syntax highlighting in for example Visual Studio Code.
+TextMate Grammar that allows storm syntax highlighting in for example Visual Studio Code or PyCharm.
 
 ## Features
-Syntax highlighting for Visual Studio Code for the storm language used by Vertex Synapse.
+Syntax highlighting for Visual Studio Code/PyCharm for the storm language used by Vertex Synapse.
 
 ## Installation
+### Visual Studio Code
 On MacOS, take the directory and copy it to `<userprofile>/.vscode/extensions`. The `.vscode` directory should look similar to this:
 ```
 	.
@@ -20,6 +21,9 @@ On MacOS, take the directory and copy it to `<userprofile>/.vscode/extensions`. 
 
 ```
 <img width="1081" alt="textmate_storm" src="https://user-images.githubusercontent.com/43104903/216791209-f918e07d-ac2c-4d3b-9a2e-f914c182ce17.png">
+### PyCharm
+For PyCharm, you can follow the documentation below:
+https://www.jetbrains.com/help/pycharm/textmate-bundles.html
 
 ## Known Issues
 
