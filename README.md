@@ -22,7 +22,7 @@ On MacOS, take the directory and copy it to `<userprofile>/.vscode/extensions`. 
 <img width="1034" alt="storm_grammar_vsc" src="https://user-images.githubusercontent.com/43104903/216810883-6b4fb9af-373f-4381-86aa-5ea0cb7d1b1e.png">
 
 ### PyCharm
-For PyCharm, you can follow the documentation below:
+For PyCharm, you can follow the guide on their website:
 https://www.jetbrains.com/help/pycharm/textmate-bundles.html
 
 ## Known Issues
