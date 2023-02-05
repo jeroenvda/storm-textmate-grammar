@@ -134,7 +134,7 @@
 			"patterns": [
 				{
 					"name": "variable",
-					"match": ".*\\$[\\w\\d\\.]+"
+					"match": "\\$[\\w\\d\\.]+"
 				}
 			]
 		},
@@ -237,7 +237,7 @@
 			"patterns": [
 				{
 					"name":"entity.name.tag",
-					"match": "#\\w+(\\.\\w+)*"
+					"match": "#\\w+(\\.\\w+)*\\.{0,1}"
 				}
 			]
 		},
