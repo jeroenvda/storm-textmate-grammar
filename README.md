@@ -18,9 +18,9 @@ On MacOS, take the directory and copy it to `<userprofile>/.vscode/extensions`. 
 	        ├── package.json
 	        └── syntaxes
 	            └── synapsestorm.tmLanguage.json
-
 ```
-<img width="1081" alt="textmate_storm" src="https://user-images.githubusercontent.com/43104903/216791209-f918e07d-ac2c-4d3b-9a2e-f914c182ce17.png">
+<img width="1034" alt="storm_grammar_vsc" src="https://user-images.githubusercontent.com/43104903/216810883-6b4fb9af-373f-4381-86aa-5ea0cb7d1b1e.png">
+
 ### PyCharm
 For PyCharm, you can follow the documentation below:
 https://www.jetbrains.com/help/pycharm/textmate-bundles.html
