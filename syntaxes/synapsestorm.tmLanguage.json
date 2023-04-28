@@ -5,6 +5,9 @@
 		{	
 			"include": "#block-comments"
 		},
+        {
+            "include": "#variables"
+        },
 		{
 			"include": "#line-comments"
 		},
@@ -17,11 +20,11 @@
 		{
 			"include": "#single-quoted-strings"
 		},
+        {
+            "include": "#backtick-strings"
+        },
 		{
 			"include": "#literal"
-		},
-		{	
-			"include": "#variables"
 		},
 		{
 			"include": "#number"
@@ -71,7 +74,7 @@
 				},
 				{
 					"name": "keyword.control.flow.conditional",
-					"match": "\\b(switch|elsif|else|if)\\b"
+					"match": "\\b(switch|elif|else|if)\\b"
 				},
 				{
 					"name": "keyword.control.trycatch.synapsestorm",
@@ -111,6 +114,23 @@
 				}
 			]
 		},
+        "backtick-strings": {
+            "name": "string.quoted.synapsestorm",
+            "begin": "\\`",
+            "end": "\\`",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.synapsestorm",
+                    "match": "\\\\."
+                },
+                {
+                    "include": "#variables"
+                },
+                {
+                    "include": "#string-consume-escape"
+                }
+            ]
+        },
 		"string-consume-escape": {
 			"match": "\\\\['\"\\n\\\\]"
 		},
