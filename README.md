@@ -6,6 +6,9 @@ Syntax highlighting for Visual Studio Code/PyCharm for the storm language used b
 
 ## Installation
 ### Visual Studio Code
+Should now be available via the VSCode Marketplace (look for `Synapse storm`).
+
+If you prefer a manual install:
 On MacOS, take the directory and copy it to `<userprofile>/.vscode/extensions`. The `.vscode` directory should look similar to this:
 ```
 	.
